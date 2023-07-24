@@ -19,4 +19,9 @@ input {
     margin-left: 450px;
     margin-bottom: 10px;
 }
-
+.main{
+    text-align: center;
+    color: rgb(54, 88, 184);
+    font-weight: bold;
+    margin-top: 20px;
+}

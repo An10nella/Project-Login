@@ -17,85 +17,103 @@ var objPeople = [
 ] 
 
 
-//     for (i=0 ; i<objPeople.length ; i++){
-//         if(username== objPeople[i].username && password == objPeople[i].password){
-//             alert ("Login successfully");
-            
-
-//         }
-//     }
-      
-// }
-var attempt = 3; 
-var btnPrimary = document.getElementById("btn btn-primary")
+// var btnPrimary = document.getElementById("btn-primary")
 var username = document.getElementById("name")
 var password = document.getElementById("Password")
-function validate(){
-  
+
+function Welcome(counter = 2){
+  for (i=0 ; i<objPeople.length ; i++){
+    if( attempt == 0){
+        alert("You have reached "+attempt+" attempt;")
+     return 
+     
+    }
+
     if(username== objPeople[i].username && password == objPeople[i].password){
 
-alert ("Login successfully")
-// window.location = "success.html" // Redirecting to other page.
-
+   alert ("Login successfully")
+   window.location = "login.html"
+   return 
 }
 else if(username!= objPeople[i].username && password != objPeople[i].password){
-attempt --;
-alert("You have left "+attempt+" attempt;")
 
-// if( attempt == 0){
-
- return 
-
+   alert("You have left "+attempt+" attempt;")
+   Welcome(counter - 1)
 }
 }
 
+}
+const loginPopup = document.querySelector(".main")
+window.addEventListener("load",function(){
+showPopup()
+})
+function showPopup(){
+   const timeLimit = 2
+    let i = 0
+    const timer = setInterval(function(){
+        i++;
+        if(i == timeLimit){
+            clearInterval(timer)
+            loginPopup.classList.add("show")
+        }
+    }
+    )
 
+}
 
+const fighters = [
+    "🐉",
+    "🐥",
+    "🐊",
+    "💩",
+    "🦍",
+    "🐢",
+    "🐩",
+    "🦀",
+    "🐝",
+    "🤖",
+    "🐘",
+    "🐸",
+    "🕷",
+    "🐆",
+    "🦕",
+    "🦁",
+  ]
 
+  console.log(fighters[3])
+  let stageEl = document.getElementById("stage")
+  let fightButtonEl = document.getElementById("fightButton")
 
+  fightButtonEl.addEventListener("click",function(){
 
+    let char01 =  Math.floor(Math.random(fighters)*fighters.length)
+    let char02 = Math.floor(Math.random(fighters)*fighters.length)
 
-
-
-
-// function Welcome(counter = 2) {
-
-//     const username = prompt("Enter username:")
-//     const password = prompt("Enter password:")
-  
-//     if (counter == 0) {
-//       console.log("Errors please try again") 
-//      console.log("You have 0 attempt.")
-//      console.log("you have failed 3 times")
-//       return;
-//     }
-  
-
-//     if (username == x && password == y) {
-//       myarr();
-    
-//     } else {
-//         console.log("Errors please try again") 
-//         console.log("You have "+ counter +  " attempts.")
-//       Welcome(counter - 1);
-//     }
-//   }
-
-// function myarr() {
-//     console.log("Available Fruit:")
-//     console.log(arrFruits)
-  
-    // let list = prompt("Enter the fruit you want to select:")
-     
-//      let list = prompt("Enter the fruit you want to select:")
-//      list in arrFruits
-  
-//     if (list .includes(arrFruits)) {
-//       console.log("You have selected " + [list])
-//     } else {
-//       console.log("This fruit is not in the basket.")
-//       myarr()
-   
-//     }
-//   }
+    let diff = 0
  
+    stageEl.innerHTML = `${fighters[char01]} VS ${fighters[char02]}`
+    if(fighters[3] == fighters[char01] || fighters[3] == fighters[char02]){
+        stageEl.innerHTML += `<br> ${fighters[3]} is the winner`
+      }else{
+        if(char01 > char02){
+          diff = char01 - char02
+          stageEl.innerHTML += `<br> ${fighters[char01]} win by ${diff} points`
+          if(diff>9){
+            fightButtonEl.style.backgroundColor="#ff5"
+          }else{
+            fightButtonEl.style.backgroundColor="#fff"
+          }
+        }else if(char01 < char02){
+          diff = char02 - char01
+          stageEl.innerHTML += `<br> ${fighters[char02]} win by ${diff} points`
+          if(diff>9){
+            fightButtonEl.style.backgroundColor="#ff5"
+          }else{
+            fightButtonEl.style.backgroundColor="#fff"
+          }
+        }else{
+          stageEl.innerHTML += `<br> Tie Game`
+          fightButtonEl.style.backgroundColor="#f0f"
+        }
+      }
+  })
