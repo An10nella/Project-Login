@@ -1,3 +1,17 @@
-/* body {
-    display: flex;
-} */
+.main{
+    text-align: center;
+ 
+}
+
+.Login {
+    margin-top: 25px;
+   
+}
+
+.btn btn-primary{
+    
+    border-radius: 5px;
+    color: #ffffff;
+   
+}
+
