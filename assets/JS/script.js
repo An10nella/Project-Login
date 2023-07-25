@@ -1,57 +1,50 @@
-var users= [
-    {
-    username :"admin01", 
-    password :"123"
-
-},
-{
-    username :"admin02" ,
-    password: "234" 
-
-},
-{
-    username :"admin03" ,
-    password :"345" 
-    
-}
-] 
-
-var maxAttempts = 2;
-var attempts = 0;
-// var btnPrimary = document.getElementById("btn btn-primary")
-function Welcome(){
-var username = document.getElementById("username").value
-var password = document.getElementById("password").value
-for (i=0; i<users.length; i++){
-  if(username==users[i].username && password == users[i].password){
-    alert("login successfully")
-    main()
-    
-
+var users = [
+  {
+    username: "admin01",
+    password: "123"
+  },
+  {
+    username: "admin02",
+    password: "234"
+  },
+  {
+    username: "admin03",
+    password: "345"
   }
-  
-  
-// else i(username!= users[i].username && password !=users[i].password){
-    
-else{  
-    
-    var remainingAttempts = maxAttempts - attempts;
-    if (remainingAttempts >= 0 ) {
-      attempts++
+];
+
+var maxAttempts = 3
+var attempts = 0
+
+function Welcome() {
+  var username = document.getElementById("username").value
+  var password = document.getElementById("password").value
+  var isValidUser = false
+
+  for (var i = 0; i < users.length; i++) {
+    if (username == users[i].username && password == users[i].password) {
+      isValidUser = true;
+      alert("Login successful")
+      document.getElementById("username").disabled = true
+      document.getElementById("password").disabled = true
+      document.querySelector("button").disabled = true
       
-      alert("Incorrect username or password. You have " + remainingAttempts + " attempt(s) remaining.")
+    }
+  }
+
+  if (!isValidUser) {
+    attempts++
+    var remainingAttempts = maxAttempts - attempts
+    if (remainingAttempts > 0) {
+      alert(
+        "Incorrect username or password. You have " +remainingAttempts +" attempt(s) remaining.")
+    } else {
+      alert("You have exceeded the maximum number of login attempts.")
       return
-      
 
-    }}
-  
-
-    
-}
-
-
+    }
   }
-
+}
 
 
   
@@ -75,7 +68,7 @@ else{
 
 // }
 
-function main(){
+
 const fighters = [
     "🐉",
     "🐥",
@@ -133,4 +126,4 @@ const fighters = [
         }
       }
   })
-}
+
