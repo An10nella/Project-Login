@@ -46,27 +46,12 @@ function Welcome() {
   }
 }
 
-
-  
-
-
-// const loginPopup = document.querySelector(".main")
-// window.addEventListener("load",function(){
-// showPopup()
-// })
-// function showPopup(){
-//    const timeLimit = 2
-//     let i = 0
-//     const timer = setInterval(function(){
-//         i++;
-//         if(i == timeLimit){
-//             clearInterval(timer)
-//             loginPopup.classList.add("show")
-//         }
-//     }
-//     )
-
-// }
+setTimeout(function () {
+  document.getElementById("welcomeMessage").style.display = "none"
+  document.getElementById("logoutButton").style.display = "block"
+  // document.getElementById("stage")
+  // document.getElementById("fightButton")
+}, 2000)
 
 
 const fighters = [
@@ -126,4 +111,15 @@ const fighters = [
         }
       }
   })
+
+  function logout() {
+    
+    window.location.href = "index.html";
+  }
+
+
+  
+ 
+
+  
 
