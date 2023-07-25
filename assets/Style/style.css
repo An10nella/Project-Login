@@ -29,6 +29,8 @@ input {
 .btn btn-danger{
     text-align: end;
 }
-.login-popup{
-    display: none;
+.login-popup {
+
+    visibility: hidden;
+
 }

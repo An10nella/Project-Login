@@ -46,14 +46,6 @@ function Welcome() {
   }
 }
 
-setTimeout(function () {
-  document.getElementById("welcomeMessage").style.display = "none"
-  document.getElementById("logoutButton").style.display = "block"
-  // document.getElementById("stage")
-  // document.getElementById("fightButton")
-}, 2000)
-
-
 const fighters = [
     "🐉",
     "🐥",
@@ -114,8 +106,16 @@ const fighters = [
 
   function logout() {
     
-    window.location.href = "index.html";
+    window.location.href = "index.html"
   }
+
+
+      setTimeout(function showdiv () {
+      document.getElementById("welcomeMessage").style.display = "none";
+      document.getElementById("fight").style.visibility = "visible"
+      }, 2000)
+  
+   
 
 
   
