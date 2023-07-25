@@ -1,16 +1,16 @@
-var objPeople = [
+var users= [
     {
-    username :"admin01", 
+    username01 :"admin01", 
     password :"123"
 
 },
 {
-    username :"admin02" ,
+    username02 :"admin02" ,
     password: "234" 
 
 },
 {
-    username :"admin03" ,
+    username03 :"admin03" ,
     password :"345" 
     
 }
@@ -21,8 +21,8 @@ var objPeople = [
 var username = document.getElementById("name").value
 var password = document.getElementById("Password").value
 
-function Welcome(counter = 2){
-  for (i=0 ; i<objPeople.length ; i++){
+function Welcome(){
+  // for (i=0 ; i<users.length ; i++){
     // if( counter == 0){
     //     alert("You have reached "+attempt+" attempt;")
     //  return 
@@ -31,24 +31,25 @@ function Welcome(counter = 2){
      
     
 
-    if(username== objPeople[i].username && password == objPeople[i].password){
+    if(username== users){
 
-   alert ("Login successfully")
-   window.location = "login.html"
-   displayWelcome(username)
-    setTimeout(() => {
-      window.location.href = "login.html"
-    }, 2000);
-   return 
-}
-else if(username!= objPeople[i].username && password != objPeople[i].password){
+   alert ("Login successfully")}}
+  
+  //  window.location = "login.html"
+  //  displayWelcome(username)
+  //   setTimeout(() => {
+  //     window.location.href = "login.html"
+  //   }, 2000);
+  //  return 
+// }
+// else if(username!= users[i].username && password !=users[i].password){
 
-   alert("You have left "+attempt+" attempt;")
-   Welcome(counter - 1)
-}
-}
+//    alert("You have left "+attempt+" attempt;")
+//    Welcome(counter - 1)
+// }
+// }
 
-}
+// }
 // const loginPopup = document.querySelector(".main")
 // window.addEventListener("load",function(){
 // showPopup()
@@ -67,59 +68,59 @@ else if(username!= objPeople[i].username && password != objPeople[i].password){
 
 // }
 
-const fighters = [
-    "🐉",
-    "🐥",
-    "🐊",
-    "💩",
-    "🦍",
-    "🐢",
-    "🐩",
-    "🦀",
-    "🐝",
-    "🤖",
-    "🐘",
-    "🐸",
-    "🕷",
-    "🐆",
-    "🦕",
-    "🦁",
-  ]
+// const fighters = [
+//     "🐉",
+//     "🐥",
+//     "🐊",
+//     "💩",
+//     "🦍",
+//     "🐢",
+//     "🐩",
+//     "🦀",
+//     "🐝",
+//     "🤖",
+//     "🐘",
+//     "🐸",
+//     "🕷",
+//     "🐆",
+//     "🦕",
+//     "🦁",
+//   ]
 
   
-  let stageEl = document.getElementById("stage")
-  let fightButtonEl = document.getElementById("fightButton")
+//   let stageEl = document.getElementById("stage")
+//   let fightButtonEl = document.getElementById("fightButton")
 
-  fightButtonEl.addEventListener("click",function(){
+//   fightButtonEl.addEventListener("click",function(){
 
-    let char01 =  Math.floor(Math.random(fighters)*fighters.length)
-    let char02 = Math.floor(Math.random(fighters)*fighters.length)
+//     let char01 =  Math.floor(Math.random(fighters)*fighters.length)
+//     let char02 = Math.floor(Math.random(fighters)*fighters.length)
 
-    let diff = 0
+//     let diff = 0
  
-    stageEl.innerHTML = `${fighters[char01]} VS ${fighters[char02]}`
-    if(fighters[3] == fighters[char01] || fighters[3] == fighters[char02]){
-        stageEl.innerHTML += `<br> ${fighters[3]} is the winner`
-      }else{
-        if(char01 > char02){
-          diff = char01 - char02
-          stageEl.innerHTML += `<br> ${fighters[char01]} win by ${diff} points`
-          if(diff>9){
-            fightButtonEl.style.backgroundColor="#ff5"
-          }else{
-            fightButtonEl.style.backgroundColor="#fff"
-          }
-        }else if(char01 < char02){
-          diff = char02 - char01
-          stageEl.innerHTML += `<br> ${fighters[char02]} win by ${diff} points`
-          if(diff>9){
-            fightButtonEl.style.backgroundColor="#ff5"
-          }else{
-            fightButtonEl.style.backgroundColor="#fff"
-          }
-        }else{
-          stageEl.innerHTML += `<br> Tie Game`
-          fightButtonEl.style.backgroundColor="#f0f"
-        }
-      }
-  })
+//     stageEl.innerHTML = `${fighters[char01]} VS ${fighters[char02]}`
+//     if(fighters[3] == fighters[char01] || fighters[3] == fighters[char02]){
+//         stageEl.innerHTML += `<br> ${fighters[3]} is the winner`
+//       }else{
+//         if(char01 > char02){
+//           diff = char01 - char02
+//           stageEl.innerHTML += `<br> ${fighters[char01]} win by ${diff} points`
+//           if(diff>9){
+//             fightButtonEl.style.backgroundColor="#ff5"
+//           }else{
+//             fightButtonEl.style.backgroundColor="#fff"
+//           }
+//         }else if(char01 < char02){
+//           diff = char02 - char01
+//           stageEl.innerHTML += `<br> ${fighters[char02]} win by ${diff} points`
+//           if(diff>9){
+//             fightButtonEl.style.backgroundColor="#ff5"
+//           }else{
+//             fightButtonEl.style.backgroundColor="#fff"
+//           }
+//         }else{
+//           stageEl.innerHTML += `<br> Tie Game`
+//           fightButtonEl.style.backgroundColor="#f0f"
+//         }
+//       }
+//   })
