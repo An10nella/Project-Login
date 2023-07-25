@@ -20,7 +20,7 @@ input {
     margin-bottom: 10px;
     padding: 5px;
 }
-.main{
+.main , .main2, .main3{
     text-align: center;
     color: rgb(54, 88, 184);
     font-weight: bold;
@@ -34,3 +34,5 @@ input {
     visibility: hidden;
 
 }
+
+

@@ -114,6 +114,16 @@ const fighters = [
       document.getElementById("welcomeMessage").style.display = "none";
       document.getElementById("fight").style.visibility = "visible"
       }, 2000)
+
+      setTimeout(function showdiv () {
+        document.getElementById("welcomeMessage2").style.display = "none";
+        document.getElementById("fight2").style.visibility = "visible"
+        }, 2000)
+
+        setTimeout(function showdiv () {
+          document.getElementById("welcomeMessage3").style.display = "none";
+          document.getElementById("fight3").style.visibility = "visible"
+          }, 2000)
   
    
 
