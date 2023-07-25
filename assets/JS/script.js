@@ -17,22 +17,28 @@ var objPeople = [
 ] 
 
 
-// var btnPrimary = document.getElementById("btn-primary")
-var username = document.getElementById("name")
-var password = document.getElementById("Password")
+// var btnPrimary = document.getElementById("btn btn-primary")
+var username = document.getElementById("name").value
+var password = document.getElementById("Password").value
 
 function Welcome(counter = 2){
   for (i=0 ; i<objPeople.length ; i++){
-    if( attempt == 0){
-        alert("You have reached "+attempt+" attempt;")
-     return 
+    // if( counter == 0){
+    //     alert("You have reached "+attempt+" attempt;")
+    //  return 
+    // }
+
      
-    }
+    
 
     if(username== objPeople[i].username && password == objPeople[i].password){
 
    alert ("Login successfully")
    window.location = "login.html"
+   displayWelcome(username)
+    setTimeout(() => {
+      window.location.href = "login.html"
+    }, 2000);
    return 
 }
 else if(username!= objPeople[i].username && password != objPeople[i].password){
@@ -43,23 +49,23 @@ else if(username!= objPeople[i].username && password != objPeople[i].password){
 }
 
 }
-const loginPopup = document.querySelector(".main")
-window.addEventListener("load",function(){
-showPopup()
-})
-function showPopup(){
-   const timeLimit = 2
-    let i = 0
-    const timer = setInterval(function(){
-        i++;
-        if(i == timeLimit){
-            clearInterval(timer)
-            loginPopup.classList.add("show")
-        }
-    }
-    )
+// const loginPopup = document.querySelector(".main")
+// window.addEventListener("load",function(){
+// showPopup()
+// })
+// function showPopup(){
+//    const timeLimit = 2
+//     let i = 0
+//     const timer = setInterval(function(){
+//         i++;
+//         if(i == timeLimit){
+//             clearInterval(timer)
+//             loginPopup.classList.add("show")
+//         }
+//     }
+//     )
 
-}
+// }
 
 const fighters = [
     "🐉",
@@ -80,7 +86,7 @@ const fighters = [
     "🦁",
   ]
 
-  console.log(fighters[3])
+  
   let stageEl = document.getElementById("stage")
   let fightButtonEl = document.getElementById("fightButton")
 
